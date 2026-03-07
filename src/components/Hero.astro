@@ -40,7 +40,7 @@
 
 <style>
   .hero {
-    padding: 120px 0;
+    padding: clamp(60px, 8vw, 120px) 0;
     overflow: hidden;
   }
 
@@ -48,12 +48,16 @@
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     align-items: center;
-    gap: 60px;
+    gap: clamp(30px, 5vw, 60px);
   }
 
+  /* -------------------------
+   TEXT
+------------------------- */
+
   .hero__content h1 {
-    font-size: clamp(3rem, 6vw, 5rem);
-    line-height: 1;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
     margin-bottom: 20px;
   }
 
@@ -61,6 +65,7 @@
     max-width: 500px;
     opacity: 0.8;
     margin-bottom: 24px;
+    font-size: clamp(1.1rem, 1.4vw, 1.3rem);
   }
 
   .hero__cta {
@@ -68,16 +73,48 @@
     background: var(--color-accent);
     color: #000;
     padding: 14px 22px;
-    border-radius: 999px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
     font-weight: 600;
+    box-shadow: 0 0 25px #e0ff3f55;
   }
+
+  /* -------------------------
+   VISUAL
+------------------------- */
 
   .hero__visual {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    height: 500px;
+    height: clamp(350px, 60vh, 700px);
     overflow: hidden;
+    position: relative;
+  }
+
+  .hero__visual::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, var(--color-bg), transparent);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero__visual::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--color-bg), transparent);
+    z-index: 2;
+    pointer-events: none;
   }
 
   .hero__column {
@@ -115,6 +152,59 @@
     }
     100% {
       transform: translateY(0);
+    }
+  }
+
+  /* -------------------------
+   TABLET
+------------------------- */
+
+  @media (max-width: 1024px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__content {
+      text-align: center;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .hero__content p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero__visual {
+      margin-top: 40px;
+    }
+  }
+
+  /* -------------------------
+   MOBILE
+------------------------- */
+  @media (max-width: 900px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__visual {
+      display: none;
+    }
+  }
+  @media (max-width: 640px) {
+    .hero__visual {
+      height: 320px;
+      gap: 14px;
+    }
+
+    .hero__column {
+      gap: 14px;
+    }
+
+    .hero__cta {
+      width: 100%;
+      text-align: center;
     }
   }
 </style>

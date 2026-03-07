@@ -53,27 +53,46 @@
 
 <style>
   .process {
-    padding: 140px 0;
+    padding: clamp(60px, 8vw, 100px) 0;
     text-align: center;
   }
 
+  /* TAG */
+
   .process__tag {
+    font-size: clamp(0.95rem, 1.2vw, 1.2rem);
     color: var(--color-accent);
     margin-bottom: 10px;
   }
 
+  /* TITLE */
+
   .process__title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    margin-bottom: 50px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-top: 0;
+    margin-bottom: clamp(30px, 5vw, 50px);
   }
+
+  /* TABS */
 
   .tabs {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    gap: clamp(18px, 3vw, 40px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 40px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    position: relative;
+    padding-bottom: 6px;
   }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* TAB */
 
   .tab {
     background: none;
@@ -81,8 +100,14 @@
     color: #aaa;
     padding: 14px 0;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 1.1vw, 1.2rem);
     position: relative;
+    white-space: nowrap;
+    transition: 0.2s;
+  }
+
+  .tab:hover {
+    color: #fff;
   }
 
   .tab.active {
@@ -99,32 +124,92 @@
     background: var(--color-accent);
   }
 
+  /* CONTENT */
+
   .tab-content {
     max-width: 800px;
     margin: auto;
     opacity: 0.8;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
     line-height: 1.7;
     display: none;
+    animation: fadeTab 0.35s ease;
   }
 
   .tab-content.active {
     display: block;
   }
+
+  @keyframes fadeTab {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 0.8;
+      transform: translateY(0);
+    }
+  }
+
+  /* TABLET */
+
+  @media (max-width: 900px) {
+    .process__title {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+    }
+
+    .tabs {
+      justify-content: flex-start;
+    }
+  }
+
+  /* MOBILE */
+  /* quitar fade en desktop */
+
+  @media (min-width: 901px) {
+    .tabs::before,
+    .tabs::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .tabs {
+      gap: 20px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tab {
+      font-size: 1rem;
+      padding: 12px 0;
+    }
+
+    .tab-content {
+      font-size: 1rem;
+    }
+  }
 </style>
 
-<script>
+<script is:inline>
   const tabs = document.querySelectorAll(".tab");
   const contents = document.querySelectorAll(".tab-content");
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.remove("active"));
-      contents.forEach((c) => c.classList.remove("active"));
+  if (tabs.length && contents.length) {
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        contents.forEach((c) => c.classList.remove("active"));
 
-      tab.classList.add("active");
+        tab.classList.add("active");
 
-      const id = tab.dataset.tab;
-      document.getElementById(id).classList.add("active");
+        const id = tab.getAttribute("data-tab");
+        const target = document.getElementById(id);
+
+        if (target) {
+          target.classList.add("active");
+        }
+      });
     });
-  });
+  }
 </script>
