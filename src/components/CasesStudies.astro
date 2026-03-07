@@ -17,7 +17,10 @@
         <!-- CARD -->
 
         <div class="case">
-          <div class="case__image">
+          <div
+            class="case__image"
+            style="background-image:url('/anuncio1.jpg')"
+          >
             <div class="case__overlay">
               <h3>
                 +300% de crecimiento<br />
@@ -196,8 +199,20 @@
     align-items: flex-end;
   }
 
+  .case__image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.75)
+    );
+  }
+
   .case__overlay {
-    max-width: 520px;
+    positon: relative;
+    z-index: 2;
   }
 
   /* CARD TITLE */
