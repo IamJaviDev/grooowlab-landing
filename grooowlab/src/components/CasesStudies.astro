@@ -1,0 +1,238 @@
+<section class="cases">
+  <div class="container">
+    <p class="cases__tag">Casos de éxito</p>
+
+    <h2 class="cases__title">
+      Resultados de quienes ya<br />
+      han superado las <span class="accent">+7 cifras.</span>
+    </h2>
+
+    <div class="cases__controls">
+      <button class="prev">←</button>
+      <button class="next">→</button>
+    </div>
+
+    <div class="cases__slider">
+      <div class="cases__track">
+        <!-- CARD -->
+
+        <div class="case">
+          <div class="case__image">
+            <div class="case__overlay">
+              <h3>
+                +300% de crecimiento<br />
+                en menos de un año
+              </h3>
+
+              <p>
+                Una marca eCommerce escaló con estrategia creativa y
+                optimización del funnel.
+              </p>
+
+              <a class="case__btn"> Descubre cómo lo hicimos → </a>
+            </div>
+          </div>
+
+          <div class="case__stats">
+            <h4>Resultados</h4>
+
+            <div class="stat">
+              <strong>+300%</strong>
+              <span>Total Growth</span>
+            </div>
+
+            <div class="stat">
+              <strong>+266%</strong>
+              <span>Pedidos totales</span>
+            </div>
+
+            <div class="stat">
+              <strong>+197%</strong>
+              <span>Nuevos clientes</span>
+            </div>
+
+            <div class="stat">
+              <strong>+6%</strong>
+              <span>Conversion rate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- puedes duplicar cards luego -->
+
+        <div class="case">
+          <div class="case__image">
+            <div class="case__overlay">
+              <h3>
+                +300% de crecimiento<br />
+                en menos de un año
+              </h3>
+
+              <p>
+                Una marca eCommerce escaló con estrategia creativa y
+                optimización del funnel.
+              </p>
+
+              <a class="case__btn"> Descubre cómo lo hicimos → </a>
+            </div>
+          </div>
+
+          <div class="case__stats">
+            <h4>Resultados</h4>
+
+            <div class="stat">
+              <strong>+300%</strong>
+              <span>Total Growth</span>
+            </div>
+
+            <div class="stat">
+              <strong>+266%</strong>
+              <span>Pedidos totales</span>
+            </div>
+
+            <div class="stat">
+              <strong>+197%</strong>
+              <span>Nuevos clientes</span>
+            </div>
+
+            <div class="stat">
+              <strong>+6%</strong>
+              <span>Conversion rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cases {
+    padding: 140px 0;
+  }
+
+  .cases__tag {
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .cases__title {
+    text-align: center;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: 60px;
+  }
+
+  .cases__controls {
+    position: absolute;
+    right: 80px;
+    margin-top: -80px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .cases__controls button {
+    background: #1a1a1a;
+    border: none;
+    color: var(--color-accent);
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .cases__slider {
+    overflow: hidden;
+  }
+
+  .cases__track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.4s ease;
+  }
+
+  .case {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: #111;
+    border-radius: 18px;
+    overflow: hidden;
+    min-width: 100%;
+  }
+
+  .case__image {
+    background: #1a1a1a; /* AQUÍ IRÁ LA IMAGEN */
+    position: relative;
+    padding: 60px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .case__overlay {
+    max-width: 520px;
+  }
+
+  .case__overlay h3 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 20px;
+  }
+
+  .case__overlay p {
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+  .case__btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid #fff;
+    border-radius: 999px;
+  }
+
+  .case__stats {
+    background: #1f1f1f;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .case__stats h4 {
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+
+  .stat {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+  }
+
+  .stat strong {
+    color: var(--color-accent);
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  .stat span {
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+</style>
+<script>
+  const track = document.querySelector(".cases__track") as HTMLElement;
+  const prev = document.querySelector(".prev") as HTMLButtonElement;
+  const next = document.querySelector(".next") as HTMLButtonElement;
+
+  let index = 0;
+
+  next.addEventListener("click", () => {
+    index++;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  prev.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+  });
+</script>

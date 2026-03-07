@@ -1,0 +1,120 @@
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <h1>
+        Escala tu marca <br />
+        <span class="accent serif">eCommerce a +7 cifras</span><br />
+        de forma rentable.
+      </h1>
+
+      <p>
+        Somos tu partner de crecimiento eCommerce. Integramos un sistema de
+        adquisición, conversión y retención que funciona, se optimiza y escala
+        de forma rentable.
+      </p>
+
+      <a class="hero__cta">Descubre cómo podemos ayudarte</a>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__column hero__column--up">
+        <img src="/marketing_metric_1.png" />
+        <img src="/marketing_metric_2.png" />
+        <img src="/marketing_metric_3.png" />
+        <img src="/marketing_metric_1.png" />
+        <img src="/marketing_metric_2.png" />
+        <img src="/marketing_metric_3.png" />
+      </div>
+
+      <div class="hero__column hero__column--down">
+        <img src="/marketing_metric_4.png" />
+        <img src="/marketing_metric_5.png" />
+        <img src="/marketing_metric_6.png" />
+        <img src="/marketing_metric_4.png" />
+        <img src="/marketing_metric_5.png" />
+        <img src="/marketing_metric_6.png" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 120px 0;
+    overflow: hidden;
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .hero__content p {
+    max-width: 500px;
+    opacity: 0.8;
+    margin-bottom: 24px;
+  }
+
+  .hero__cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #000;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+
+  .hero__visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .hero__column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero__column img {
+    border-radius: 12px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .hero__column--up {
+    animation: scrollUp 20s linear infinite;
+  }
+
+  .hero__column--down {
+    animation: scrollDown 20s linear infinite;
+  }
+
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes scrollDown {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>

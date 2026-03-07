@@ -1,0 +1,127 @@
+<footer class="footer">
+  <div class="footer-line"></div>
+
+  <div class="footer-container">
+    <!-- LEFT -->
+
+    <div class="footer-left">
+      <img src="/logo-arrows.svg" class="footer-logo" alt="logo" />
+
+      <div class="footer-social">
+        <a href="#">IG</a>
+        <a href="#">IN</a>
+        <a href="#">TT</a>
+        <a href="#">YT</a>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+
+    <nav class="footer-nav">
+      <a href="#">Casos de éxito</a>
+      <a href="#">Nuestros Servicios</a>
+      <a href="#">Nuestro Proceso</a>
+      <a href="#">Sobre Nosotros</a>
+    </nav>
+
+    <!-- RIGHT -->
+
+    <div class="footer-right">
+      <a class="footer-cta"> Agenda tu Discovery Call Gratuita </a>
+
+      <div class="footer-legal">
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<style>
+  .footer {
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  .footer-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
+    margin-bottom: 40px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px #e0ff3f) drop-shadow(0 0 20px #e0ff3f);
+  }
+
+  /* redes */
+
+  .footer-social {
+    display: flex;
+    gap: 15px;
+  }
+
+  .footer-social a {
+    color: #e0ff3f;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* nav */
+
+  .footer-nav {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .footer-nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .footer-nav a:hover {
+    color: #fff;
+  }
+
+  /* right */
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-cta {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 40px;
+    background: #e0ff3f;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 0 25px #e0ff3f55;
+  }
+
+  .footer-legal {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #777;
+  }
+
+  .footer-legal a {
+    margin-left: 15px;
+    color: #777;
+    text-decoration: none;
+  }
+</style>

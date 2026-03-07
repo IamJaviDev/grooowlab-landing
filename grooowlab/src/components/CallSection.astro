@@ -1,0 +1,136 @@
+<section class="call">
+  <div class="call-container">
+    <!-- LEFT -->
+
+    <div class="call-left">
+      <img src="/logo-arrows.svg" class="call-logo" alt="logo" />
+
+      <h2>¿Listo para escalar tu marca de forma rentable?</h2>
+
+      <p class="call-sub">
+        En 20 minutos te daremos claridad sobre dónde estás, qué frena tu
+        crecimiento y si somos el partner adecuado para desbloquear tu siguiente
+        etapa.
+      </p>
+
+      <div class="call-box">
+        <h3>Ideal para ti si quieres:</h3>
+
+        <ul>
+          <li>Un partner estratégico, no otra agencia más</li>
+          <li>Un sistema de captación y retención que funcione de verdad</li>
+          <li>Resultados reales sin perder rentabilidad</li>
+        </ul>
+      </div>
+
+      <div class="call-box">
+        <h3>Para aplicar, tu marca debe:</h3>
+
+        <ul>
+          <li>Facturar al menos 30K€/mes</li>
+          <li>Estar lista para escalar</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="call-right">
+      <iframe
+        src="https://calendly.com/"
+        width="100%"
+        height="100%"
+        frameborder="0"
+      >
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .call {
+    padding: 140px 20px;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  .call-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .call-logo {
+    width: 45px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px #e0ff3f) drop-shadow(0 0 25px #e0ff3f);
+  }
+
+  .call-left h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .call-sub {
+    color: #aaa;
+    margin-bottom: 30px;
+    max-width: 500px;
+  }
+
+  .call-box {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+  .call-box h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .call-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .call-box li {
+    margin: 8px 0;
+    color: #aaa;
+    position: relative;
+    padding-left: 18px;
+  }
+
+  .call-box li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #e0ff3f;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 9px;
+  }
+
+  .call-right {
+    height: 520px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .call-container {
+      grid-template-columns: 1fr;
+    }
+
+    .call-right {
+      height: 600px;
+    }
+  }
+</style>

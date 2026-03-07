@@ -1,0 +1,60 @@
+<header class="navbar">
+  <div class="container navbar__inner">
+    <div class="navbar__logo">GrooowLab</div>
+
+    <nav class="navbar__menu">
+      <a href="#">Servicios</a>
+      <a href="#">Sistema</a>
+      <a href="#">Casos</a>
+      <a href="#">FAQ</a>
+    </nav>
+
+    <a href="#" class="navbar__cta"> Reserva una auditoría </a>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 18px 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar__logo {
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .navbar__menu {
+    display: flex;
+    gap: 28px;
+    font-size: 0.95rem;
+  }
+
+  .navbar__menu a {
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+
+  .navbar__menu a:hover {
+    opacity: 1;
+  }
+
+  .navbar__cta {
+    background: var(--color-accent);
+    color: #000;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

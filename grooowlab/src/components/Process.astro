@@ -1,0 +1,130 @@
+<section class="process">
+  <div class="container">
+    <p class="process__tag">Nuestro proceso. Tu crecimiento.</p>
+
+    <h2 class="process__title">Escalar marcas no es arte. Es método.</h2>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="research">Research</button>
+      <button class="tab" data-tab="creative">Creatividades</button>
+      <button class="tab" data-tab="media">Media Buying</button>
+      <button class="tab" data-tab="analysis">Análisis</button>
+      <button class="tab" data-tab="scale">Iteración & Escalado</button>
+    </div>
+
+    <div class="tab-content active" id="research">
+      <p>
+        Antes de producir un solo anuncio, construimos los dashboards de
+        inteligencia de tu marca: análisis de competencia, psicología del
+        cliente, matriz de ángulos y buyer personas validados.
+      </p>
+    </div>
+
+    <div class="tab-content" id="creative">
+      <p>
+        Producimos creatividades cada semana basadas en hipótesis claras.
+        Probamos hooks, formatos y mensajes hasta encontrar los que generan
+        mayor conversión.
+      </p>
+    </div>
+
+    <div class="tab-content" id="media">
+      <p>
+        Gestionamos campañas publicitarias con sistemas de optimización
+        continua. Escalamos lo que funciona y pausamos lo que no.
+      </p>
+    </div>
+
+    <div class="tab-content" id="analysis">
+      <p>
+        Analizamos cada métrica clave del negocio: CAC, MER, LTV y ROAS para
+        tomar decisiones de inversión basadas en datos.
+      </p>
+    </div>
+
+    <div class="tab-content" id="scale">
+      <p>
+        Iteramos constantemente. Cuando encontramos un ángulo ganador, lo
+        escalamos en múltiples canales para maximizar el crecimiento.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process {
+    padding: 140px 0;
+    text-align: center;
+  }
+
+  .process__tag {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+  }
+
+  .process__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: 50px;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+  }
+
+  .tab {
+    background: none;
+    border: none;
+    color: #aaa;
+    padding: 14px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+  }
+
+  .tab.active {
+    color: var(--color-accent);
+  }
+
+  .tab.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .tab-content {
+    max-width: 800px;
+    margin: auto;
+    opacity: 0.8;
+    line-height: 1.7;
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const contents = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      contents.forEach((c) => c.classList.remove("active"));
+
+      tab.classList.add("active");
+
+      const id = tab.dataset.tab;
+      document.getElementById(id).classList.add("active");
+    });
+  });
+</script>

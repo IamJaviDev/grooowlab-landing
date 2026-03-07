@@ -1,0 +1,82 @@
+<section class="logos">
+  <p class="logos__title">Marcas que han confiado en nosotros</p>
+
+  <div class="logos__slider">
+    <div class="logos__track">
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+      <img src="/seofox.png" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .logos {
+    max-width: 1080px;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .logos__title {
+    opacity: 0.6;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+  }
+
+  .logos__slider {
+    position: relative;
+    overflow: hidden;
+  }
+  .logos__slider::before,
+  .logos__slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .logos__slider::before {
+    left: 0;
+    background: linear-gradient(to right, #000, transparent);
+  }
+
+  .logos__slider::after {
+    right: 0;
+    background: linear-gradient(to left, #000, transparent);
+  }
+
+  .logos__track {
+    display: flex;
+    gap: 80px;
+    width: max-content;
+    animation: scrollLogos 25s linear infinite;
+  }
+
+  .logos__track img {
+    height: 34px;
+    opacity: 0.7;
+    filter: grayscale(100%);
+  }
+
+  @keyframes scrollLogos {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

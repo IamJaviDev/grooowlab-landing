@@ -1,0 +1,153 @@
+<section class="why">
+  <div class="container">
+    <div class="why__top">
+      <div class="why__left">
+        <p class="why__tag">Por qué escogernos</p>
+        <h2 class="why__title">
+          No necesitas otra agencia.<br />
+          Necesitas un socio.
+        </h2>
+      </div>
+
+      <div class="why__right">
+        <p>
+          Planificamos, creamos y gestionamos todos los aspectos de sus campañas
+          de marketing digital mientras usted se centra en ampliar su negocio.
+        </p>
+      </div>
+    </div>
+
+    <div class="why__grid">
+      <div class="why-card">
+        <div class="why-card__img">
+          <img src="/marketing_metric_1.png" alt="" />
+        </div>
+
+        <h3>Somos tu socio de crecimiento.</h3>
+
+        <p>
+          Creatividad, anuncios, CRO y retención bajo un mismo equipo y una
+          misma estrategia.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card__img">
+          <img src="/marketing_metric_2.png" alt="" />
+        </div>
+
+        <h3>Performance Oriented.</h3>
+
+        <p>
+          Nuestro foco no está en hacer ads, sino en hacerte ganar más. Todo
+          optimizado hacia resultados.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card__img">
+          <img src="/marketing_metric_3.png" alt="" />
+        </div>
+
+        <h3>Un solo sistema. Todo alineado.</h3>
+
+        <p>Nos integramos en tu marca como tu departamento de crecimiento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why {
+    padding: 50px 0;
+    position: relative;
+  }
+
+  .why::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-accent),
+      transparent
+    );
+
+    box-shadow: 0 0 10px var(--color-accent);
+  }
+
+  .why__top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 80px;
+  }
+
+  .why__left {
+    padding: 0;
+    margin: 0;
+    gap: 0px;
+    max-width: 700px;
+  }
+
+  .why__right {
+    max-width: 420px;
+    margin-left: auto;
+    opacity: 0.8;
+  }
+
+  .why__tag {
+    color: var(--color-accent);
+    margin-bottom: -25px;
+  }
+
+  .why__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .why__right {
+    opacity: 0.8;
+    max-width: 420px;
+  }
+
+  .why__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .why-card {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .why-card__img {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .why-card__img img {
+    width: 250px;
+    height: 150px;
+    object-fit: contain;
+  }
+
+  .why-card h3 {
+    margin-bottom: 10px;
+  }
+
+  .why-card p {
+    opacity: 0.7;
+    font-size: 0.95rem;
+  }
+</style>

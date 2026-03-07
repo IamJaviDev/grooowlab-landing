@@ -1,0 +1,82 @@
+<section class="metrics">
+  <div class="container">
+    <div class="metrics__top">
+      <h2 class="metrics__title">Los resultados<br />hablan por sí solos</h2>
+
+      <p class="metrics__desc">
+        Convertimos datos en facturación. A través de análisis estratégico,
+        sistemas validados y una visión centrada en rentabilidad, ayudamos a
+        marcas a escalar su presencia online de forma sostenible y rentable.
+      </p>
+    </div>
+
+    <div class="metrics__grid">
+      <div class="metric">
+        <div class="metric__number">+10M€</div>
+        <div class="metric__label">de facturación generados en 2024</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric__number">+20</div>
+        <div class="metric__label">de 6 cifras mensuales</div>
+      </div>
+
+      <div class="metric">
+        <div class="metric__number">4,5x</div>
+        <div class="metric__label">ROI en marketing digital</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .metrics {
+    padding: 120px 0;
+  }
+
+  .metrics__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+
+  .metrics__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 500;
+  }
+
+  .metrics__desc {
+    opacity: 0.8;
+    max-width: 520px;
+  }
+
+  .metrics__grid {
+    max-width: 950px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    gap: 30px;
+  }
+
+  .metric {
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .metric__number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 10px;
+  }
+
+  .metric__label {
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,199 @@
+<section class="reviews">
+  <div class="section-line"></div>
+
+  <div class="reviews-header">
+    <h2>Esto es lo que dicen las marcas que ya han trabajado con nosotros.</h2>
+
+    <p>
+      No lo decimos nosotros. Lo dicen quienes ya han aplicado el sistema y han
+      visto los resultados.
+    </p>
+
+    <a class="reviews-btn">Agenda tu Discovery Call Gratuita</a>
+  </div>
+
+  <div class="reviews-slider">
+    <div class="reviews-track">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <h3>Claudia&Julia</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "No son una agencia más. Trabajan como si fueran parte del equipo y
+          siempre buscando mejorar."
+        </p>
+        <span>Claudia · Fundadora</span>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <h3>8hours</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "Más que campañas, nos dieron claridad estratégica y un sistema para
+          escalar."
+        </p>
+        <span>Mathias · Founder</span>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <h3>Cocoa</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "Antes no sabíamos por dónde empezar. Ahora tenemos una estructura
+          clara de crecimiento."
+        </p>
+        <span>Rubén · CEO</span>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <h3>Materia Rica</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "En pocos meses vimos más resultados que en años trabajando con otras
+          agencias."
+        </p>
+        <span>Andrea · Founder</span>
+      </div>
+
+      <!-- duplicadas para loop infinito -->
+
+      <div class="review-card">
+        <h3>Claudia&Julia</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "No son una agencia más. Trabajan como si fueran parte del equipo."
+        </p>
+        <span>Claudia · Fundadora</span>
+      </div>
+
+      <div class="review-card">
+        <h3>8hours</h3>
+        <div class="stars">★★★★★</div>
+        <p>"Nos dieron claridad estratégica y estructura."</p>
+        <span>Mathias · Founder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    padding: 140px 20px;
+    text-align: center;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  /* linea superior */
+
+  .section-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e0ff3f, transparent);
+    opacity: 0.5;
+    margin-bottom: 80px;
+  }
+
+  /* header */
+
+  .reviews-header h2 {
+    font-size: 42px;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+
+  .reviews-header p {
+    color: #aaa;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  .reviews-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #e0ff3f;
+    color: #000;
+    border-radius: 40px;
+    font-weight: 600;
+    box-shadow: 0 0 25px #e0ff3f55;
+  }
+
+  .reviews-slider {
+    margin-top: 70px;
+    overflow: hidden;
+    position: relative;
+
+    /* fade real */
+
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 120px,
+      black calc(100% - 120px),
+      transparent
+    );
+
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 120px,
+      black calc(100% - 120px),
+      transparent
+    );
+  }
+
+  .reviews-track {
+    display: flex;
+    gap: 30px;
+    animation: scrollReviews 25s linear infinite;
+  }
+
+  /* cards */
+
+  .review-card {
+    min-width: 320px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0a0a0a;
+    text-align: left;
+  }
+
+  .review-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .stars {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  .review-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .review-card span {
+    font-size: 13px;
+    color: #777;
+  }
+
+  /* animacion */
+
+  @keyframes scrollReviews {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
