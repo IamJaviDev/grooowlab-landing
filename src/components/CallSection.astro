@@ -49,34 +49,46 @@
 
 <style>
   .call {
-    padding: 140px 20px;
+    padding: clamp(70px, 8vw, 120px) 20px;
     max-width: 1400px;
     margin: auto;
   }
 
+  /* GRID */
+
   .call-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: clamp(40px, 6vw, 70px);
     align-items: center;
   }
+
+  /* LOGO */
 
   .call-logo {
     width: 45px;
     margin-bottom: 25px;
-    filter: drop-shadow(0 0 10px #e0ff3f) drop-shadow(0 0 25px #e0ff3f);
+    filter: drop-shadow(0 0 10px var(--color-accent))
+      drop-shadow(0 0 25px var(--color-accent));
   }
 
+  /* TITLE */
+
   .call-left h2 {
-    font-size: 36px;
+    font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 15px;
   }
+
+  /* SUBTEXT */
 
   .call-sub {
     color: #aaa;
     margin-bottom: 30px;
     max-width: 500px;
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
   }
+
+  /* BOX */
 
   .call-box {
     background: linear-gradient(
@@ -84,15 +96,20 @@
       rgba(255, 255, 255, 0.06),
       rgba(255, 255, 255, 0.02)
     );
-    padding: 25px;
+
+    padding: clamp(20px, 2vw, 25px);
     border-radius: 16px;
     margin-bottom: 20px;
   }
 
+  /* BOX TITLE */
+
   .call-box h3 {
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: clamp(0.95rem, 1vw, 1rem);
   }
+
+  /* LIST */
 
   .call-box ul {
     list-style: none;
@@ -104,18 +121,23 @@
     color: #aaa;
     position: relative;
     padding-left: 18px;
+    font-size: 0.95rem;
   }
+
+  /* BULLET */
 
   .call-box li::before {
     content: "";
     width: 6px;
     height: 6px;
-    background: #e0ff3f;
+    background: var(--color-accent);
     border-radius: 50%;
     position: absolute;
     left: 0;
     top: 9px;
   }
+
+  /* CALENDLY */
 
   .call-right {
     height: 520px;
@@ -124,13 +146,41 @@
     background: #fff;
   }
 
+  .call-right iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* TABLET */
+
   @media (max-width: 900px) {
     .call-container {
       grid-template-columns: 1fr;
+      gap: 50px;
     }
 
+    .call-left {
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .call-left h2 {
+      text-align: center;
+    }
+
+    .call-sub {
+      text-align: center;
+      margin: auto auto 30px;
+    }
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 600px) {
     .call-right {
-      height: 600px;
+      height: 620px;
     }
   }
 </style>
