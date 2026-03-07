@@ -7,12 +7,12 @@
       han superado las <span class="accent">+7 cifras.</span>
     </h2>
 
-    <div class="cases__controls">
-      <button class="prev">←</button>
-      <button class="next">→</button>
-    </div>
-
     <div class="cases__slider">
+      <div class="cases__controls">
+        <button class="prev">←</button>
+        <button class="next">→</button>
+      </div>
+
       <div class="cases__track">
         <!-- CARD -->
 
@@ -108,47 +108,74 @@
 
 <style>
   .cases {
-    padding: 140px 0;
+    padding: clamp(70px, 8vw, 120px) 0;
   }
+
+  /* TAG */
 
   .cases__tag {
     color: var(--color-accent);
     text-align: center;
     margin-bottom: 10px;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
   }
+
+  /* TITLE */
 
   .cases__title {
     text-align: center;
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    margin-bottom: 60px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: clamp(40px, 6vw, 70px);
   }
+
+  /* SLIDER */
+
+  .cases__slider {
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* CONTROLS */
 
   .cases__controls {
     position: absolute;
-    right: 80px;
-    margin-top: -80px;
+    top: 20px;
+    right: 20px;
     display: flex;
     gap: 10px;
+    z-index: 20;
   }
 
   .cases__controls button {
     background: #1a1a1a;
     border: none;
     color: var(--color-accent);
-    padding: 10px 14px;
-    border-radius: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
   }
 
-  .cases__slider {
-    overflow: hidden;
+  .cases__controls button:hover {
+    background: #262626;
   }
+
+  /* TRACK */
 
   .cases__track {
     display: flex;
     gap: 30px;
     transition: transform 0.4s ease;
   }
+
+  /* CARD */
 
   .case {
     display: grid;
@@ -159,10 +186,12 @@
     min-width: 100%;
   }
 
+  /* IMAGE */
+
   .case__image {
-    background: #1a1a1a; /* AQUÍ IRÁ LA IMAGEN */
+    background: #1a1a1a;
     position: relative;
-    padding: 60px;
+    padding: clamp(30px, 5vw, 60px);
     display: flex;
     align-items: flex-end;
   }
@@ -171,26 +200,35 @@
     max-width: 520px;
   }
 
+  /* CARD TITLE */
+
   .case__overlay h3 {
-    font-size: clamp(2rem, 3vw, 3rem);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     margin-bottom: 20px;
   }
+
+  /* TEXT */
 
   .case__overlay p {
     opacity: 0.8;
     margin-bottom: 20px;
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
   }
+
+  /* BUTTON */
 
   .case__btn {
     display: inline-block;
     padding: 12px 20px;
     border: 1px solid #fff;
-    border-radius: 999px;
+    border-radius: 8px;
   }
+
+  /* STATS */
 
   .case__stats {
     background: #1f1f1f;
-    padding: 40px;
+    padding: clamp(30px, 3vw, 40px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -216,23 +254,66 @@
     opacity: 0.7;
     font-size: 0.9rem;
   }
+
+  /* TABLET */
+
+  @media (max-width: 900px) {
+    .case {
+      grid-template-columns: 1fr;
+    }
+
+    .case__stats {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .stat {
+      width: 45%;
+      border: none;
+    }
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 600px) {
+    .case__overlay h3 {
+      font-size: 1.6rem;
+    }
+
+    .case__stats {
+      flex-direction: column;
+    }
+
+    .stat {
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cases__controls {
+      top: 15px;
+      right: 15px;
+    }
+  }
 </style>
-<script>
-  const track = document.querySelector(".cases__track") as HTMLElement;
-  const prev = document.querySelector(".prev") as HTMLButtonElement;
-  const next = document.querySelector(".next") as HTMLButtonElement;
+<script is:inline>
+  const track = document.querySelector(".cases__track");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
 
   let index = 0;
 
-  next.addEventListener("click", () => {
-    index++;
-    track.style.transform = `translateX(-${index * 100}%)`;
-  });
-
-  prev.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
+  if (track && prev && next) {
+    next.addEventListener("click", () => {
+      index++;
       track.style.transform = `translateX(-${index * 100}%)`;
-    }
-  });
+    });
+
+    prev.addEventListener("click", () => {
+      if (index > 0) {
+        index--;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+    });
+  }
 </script>
