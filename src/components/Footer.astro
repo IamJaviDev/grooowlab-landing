@@ -5,13 +5,26 @@
     <!-- LEFT -->
 
     <div class="footer-left">
-      <img src="/logo-arrows.svg" class="footer-logo" alt="logo" />
+      <img src="/growlab-logo.png" class="footer-logo" alt="logo" />
 
       <div class="footer-social">
-        <a href="#">IG</a>
-        <a href="#">IN</a>
-        <a href="#">TT</a>
-        <a href="#">YT</a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1.2"></circle>
+          </svg>
+        </a>
       </div>
     </div>
 
@@ -36,6 +49,7 @@
     </div>
   </div>
 </footer>
+
 <style>
   .footer {
     padding: clamp(60px, 7vw, 100px) 20px;
@@ -87,10 +101,20 @@
   }
 
   .footer-social a {
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    color: #aaa;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+  }
+
+  .footer-social a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
   }
 
   /* NAV */

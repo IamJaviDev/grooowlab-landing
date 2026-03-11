@@ -25,5 +25,18 @@ const { title = "Grooowlab" } = Astro.props;
 
   <body>
     <slot />
+    <div class="cursor"></div>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+          if (!cursor) return;
+
+          cursor.style.left = e.clientX + "px";
+          cursor.style.top = e.clientY + "px";
+        });
+      });
+    </script>
   </body>
 </html>

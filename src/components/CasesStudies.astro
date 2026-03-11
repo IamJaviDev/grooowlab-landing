@@ -19,7 +19,7 @@
         <div class="case">
           <div
             class="case__image"
-            style="background-image:url('/anuncio1.jpg')"
+            style="background-image:url('/anuncio1.png')"
           >
             <div class="case__overlay">
               <h3>
@@ -64,7 +64,55 @@
         <!-- puedes duplicar cards luego -->
 
         <div class="case">
-          <div class="case__image">
+          <div
+            class="case__image"
+            style="background-image:url('/anuncio2.png')"
+          >
+            <div class="case__overlay">
+              <h3>
+                +300% de crecimiento<br />
+                en menos de un año
+              </h3>
+
+              <p>
+                Una marca eCommerce escaló con estrategia creativa y
+                optimización del funnel.
+              </p>
+
+              <a class="case__btn"> Descubre cómo lo hicimos → </a>
+            </div>
+          </div>
+
+          <div class="case__stats">
+            <h4>Resultados</h4>
+
+            <div class="stat">
+              <strong>+300%</strong>
+              <span>Total Growth</span>
+            </div>
+
+            <div class="stat">
+              <strong>+266%</strong>
+              <span>Pedidos totales</span>
+            </div>
+
+            <div class="stat">
+              <strong>+197%</strong>
+              <span>Nuevos clientes</span>
+            </div>
+
+            <div class="stat">
+              <strong>+6%</strong>
+              <span>Conversion rate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case">
+          <div
+            class="case__image"
+            style="background-image:url('/anuncio3.png')"
+          >
             <div class="case__overlay">
               <h3>
                 +300% de crecimiento<br />
@@ -317,11 +365,14 @@
   const next = document.querySelector(".next");
 
   let index = 0;
+  const maxSlides = track.children.length - 1;
 
   if (track && prev && next) {
     next.addEventListener("click", () => {
-      index++;
-      track.style.transform = `translateX(-${index * 100}%)`;
+      if (index < maxSlides) {
+        index++;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
     });
 
     prev.addEventListener("click", () => {
