@@ -44,60 +44,6 @@ linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
 background-size:60px 60px;
 }
 
-background:
-
-/* glow superior */
-
-radial-gradient(
-800px circle at 50% -10%,
-rgba(224,255,63,0.08),
-transparent 60%
-),
-
-/* glow lateral */
-
-radial-gradient(
-600px circle at 0% 60%,
-rgba(224,255,63,0.05),
-transparent 60%
-),
-
-/* glow inferior */
-
-radial-gradient(
-700px circle at 80% 100%,
-rgba(224,255,63,0.06),
-transparent 60%
-);
-
-
-/*background:
-
- nebula 1
-radial-gradient(
-600px circle at 20% 30%,
-rgba(224,255,63,0.18),
-transparent 60%
-),
-
-/* nebula 2
-radial-gradient(
-500px circle at 80% 60%,
-rgba(224,255,63,0.15),
-transparent 60%
-),
-
-/* nebula 3 
-radial-gradient(
-700px circle at 50% 90%,
-rgba(224,255,63,0.12),
-transparent 60%
-);
-
-filter:blur(40px);
-*/
-
-
 h1,h2,h3,h4{
   font-weight:500;
   letter-spacing: -0.02em;
@@ -156,4 +102,15 @@ textarea {
   .cursor{
     display:none;
   }
+}
+@media (max-width:768px){
+
+body::after{
+
+background-size:40px 40px;
+
+opacity:.25;
+
+}
+
 }
