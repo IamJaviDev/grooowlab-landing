@@ -1,0 +1,118 @@
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-text">
+    <p>
+      Usamos cookies para mejorar tu experiencia y analizar el tráfico.
+      <a href="/cookies">Más información</a>
+    </p>
+  </div>
+
+  <div class="cookie-actions">
+    <button id="reject-cookies" class="cookie-btn ghost"> Rechazar </button>
+
+    <button id="accept-cookies" class="cookie-btn primary"> Aceptar </button>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.getElementById("accept-cookies");
+  const reject = document.getElementById("reject-cookies");
+
+  if (localStorage.getItem("cookiesAccepted")) {
+    banner?.remove();
+  }
+
+  accept?.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    banner?.remove();
+  });
+
+  reject?.addEventListener("click", () => {
+    banner?.remove();
+  });
+</script>
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    width: min(92%, 900px);
+
+    padding: 18px 24px;
+
+    border-radius: 16px;
+
+    background: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(224, 255, 63, 0.15);
+
+    box-shadow: 0 0 40px rgba(224, 255, 63, 0.08);
+
+    z-index: 9999;
+  }
+
+  /* TEXT */
+
+  .cookie-text {
+    font-size: 0.95rem;
+    color: #aaa;
+    max-width: 520px;
+  }
+
+  .cookie-text a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  /* BUTTONS */
+
+  .cookie-actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  .cookie-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* PRIMARY */
+
+  .cookie-btn.primary {
+    background: var(--color-accent);
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* GHOST */
+
+  .cookie-btn.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+  }
+  @media (max-width: 600px) {
+    .cookie-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px;
+    }
+
+    .cookie-actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+</style>
