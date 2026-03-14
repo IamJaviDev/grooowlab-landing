@@ -3,9 +3,11 @@
     <div class="hero__content">
       <h1>
         El 90% de <br /><span class="accent serif">
-          eCommerce no llega a 7 cifras.</span
+          eCommerce no llega a<br /> 7 cifras.</span
         ><br />
-        El tuyo tampoco. Todavia.
+        <span class="sub_title"
+          >El tuyo tampoco. Pero oye, la web quedó preciosa.</span
+        >
       </h1>
 
       <p>
@@ -68,6 +70,12 @@
     font-size: clamp(2.4rem, 5.8vw, 4.6rem);
     line-height: 1.05;
     margin-bottom: 20px;
+  }
+
+  .hero__content h1 .sub_title {
+    display: block;
+    font-size: clamp(2rem, 5vw, 4rem) !important;
+    line-height: 1.05;
   }
 
   .hero__content p {
