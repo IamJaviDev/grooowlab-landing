@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+const title = "Política de Cookies";
+---
+
+<BaseLayout title={title}>
+  <section class="legal container">
+    <h1>Política de Cookies</h1>
+
+    <p>
+      En esta web utilizamos cookies para mejorar la experiencia de navegación,
+      analizar el tráfico y personalizar el contenido. Al continuar navegando
+      por el sitio aceptas el uso de cookies según lo descrito en esta política.
+    </p>
+
+    <h2>¿Qué son las cookies?</h2>
+
+    <p>
+      Las cookies son pequeños archivos de texto que se almacenan en tu
+      navegador cuando visitas una página web. Sirven para reconocer tu
+      dispositivo y recordar información sobre tu visita.
+    </p>
+
+    <h2>Tipos de cookies utilizadas</h2>
+
+    <ul>
+      <li>
+        <strong>Cookies técnicas:</strong> necesarias para el funcionamiento correcto
+        de la web.
+      </li>
+
+      <li>
+        <strong>Cookies de análisis:</strong> permiten medir y analizar el comportamiento
+        de los usuarios en la web.
+      </li>
+
+      <li>
+        <strong>Cookies de personalización:</strong> permiten recordar tus preferencias
+        para mejorar la experiencia.
+      </li>
+    </ul>
+
+    <h2>Cómo gestionar las cookies</h2>
+
+    <p>
+      Puedes permitir, bloquear o eliminar las cookies instaladas en tu
+      dispositivo mediante la configuración de tu navegador.
+    </p>
+
+    <p>
+      Ten en cuenta que desactivar algunas cookies puede afectar al
+      funcionamiento de ciertas partes del sitio web.
+    </p>
+
+    <h2>Actualizaciones</h2>
+
+    <p>
+      Esta política de cookies puede actualizarse periódicamente para adaptarse
+      a cambios legales o técnicos.
+    </p>
+  </section>
+
+  <style>
+    .legal {
+      max-width: 800px;
+      margin: 120px auto;
+      line-height: 1.7;
+    }
+
+    .legal h1 {
+      margin-bottom: 30px;
+    }
+
+    .legal h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .legal p,
+    .legal ul {
+      color: #aaa;
+    }
+  </style>
+</BaseLayout>
