@@ -29,6 +29,16 @@ const { title = "Grooowlab" } = Astro.props;
     <div class="cursor"></div>
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
+        // Detecta si es dispositivo táctil (móvil o tablet)
+        const isTouchDevice =
+          "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+        if (isTouchDevice) {
+          const cursor = document.querySelector(".cursor");
+          if (cursor) cursor.style.display = "none";
+          return;
+        }
+
         const cursor = document.querySelector(".cursor");
 
         document.addEventListener("mousemove", (e) => {
