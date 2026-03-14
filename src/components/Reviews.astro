@@ -9,7 +9,9 @@
       visto los resultados.
     </p>
 
-    <a href="#contact" class="reviews-btn">Agenda tu Discovery Call Gratuita</a>
+    <a href="#contact" class="reviews-btn">
+      Agenda tu Discovery Call Gratuita
+    </a>
   </div>
 
   <div class="reviews-slider">
@@ -18,10 +20,14 @@
       <div class="review-card">
         <h3>Claudia&Julia</h3>
         <div class="stars">★★★★★</div>
+
         <p>
           "No son una agencia más. Trabajan como si fueran parte del equipo y
           siempre buscando mejorar."
         </p>
+
+        <hr class="review-divider" />
+
         <span>Claudia · Fundadora</span>
       </div>
 
@@ -29,10 +35,14 @@
       <div class="review-card">
         <h3>8hours</h3>
         <div class="stars">★★★★★</div>
+
         <p>
           "Más que campañas, nos dieron claridad estratégica y un sistema para
           escalar."
         </p>
+
+        <hr class="review-divider" />
+
         <span>Mathias · Founder</span>
       </div>
 
@@ -40,10 +50,14 @@
       <div class="review-card">
         <h3>Cocoa</h3>
         <div class="stars">★★★★★</div>
+
         <p>
           "Antes no sabíamos por dónde empezar. Ahora tenemos una estructura
           clara de crecimiento."
         </p>
+
+        <hr class="review-divider" />
+
         <span>Rubén · CEO</span>
       </div>
 
@@ -51,10 +65,14 @@
       <div class="review-card">
         <h3>Materia Rica</h3>
         <div class="stars">★★★★★</div>
+
         <p>
           "En pocos meses vimos más resultados que en años trabajando con otras
           agencias."
         </p>
+
+        <hr class="review-divider" />
+
         <span>Andrea · Founder</span>
       </div>
 
@@ -63,16 +81,24 @@
       <div class="review-card">
         <h3>Claudia&Julia</h3>
         <div class="stars">★★★★★</div>
+
         <p>
           "No son una agencia más. Trabajan como si fueran parte del equipo."
         </p>
+
+        <hr class="review-divider" />
+
         <span>Claudia · Fundadora</span>
       </div>
 
       <div class="review-card">
         <h3>8hours</h3>
         <div class="stars">★★★★★</div>
+
         <p>"Nos dieron claridad estratégica y estructura."</p>
+
+        <hr class="review-divider" />
+
         <span>Mathias · Founder</span>
       </div>
     </div>
@@ -81,7 +107,7 @@
 
 <style>
   .reviews {
-    padding: 50px 20px;
+    padding: 70px 20px;
     text-align: center;
     max-width: 1400px;
     margin: auto;
@@ -122,12 +148,12 @@
     box-shadow: 0 0 25px #e0ff3f55;
   }
 
+  /* slider */
+
   .reviews-slider {
     margin-top: 70px;
     overflow: hidden;
     position: relative;
-
-    /* fade real */
 
     mask-image: linear-gradient(
       to right,
@@ -149,7 +175,13 @@
   .reviews-track {
     display: flex;
     gap: 30px;
-    animation: scrollReviews 25s linear infinite;
+    animation: scrollReviews 9s linear infinite;
+  }
+
+  /* pausa en hover */
+
+  .reviews-track:hover {
+    animation-play-state: paused;
   }
 
   /* cards */
@@ -161,6 +193,7 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: #0a0a0a;
     text-align: left;
+    transition: 0.3s;
   }
 
   .review-card h3 {
@@ -180,6 +213,20 @@
     margin-bottom: 20px;
   }
 
+  /* linea dentro review */
+
+  .review-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    margin: 20px 0;
+  }
+
   .review-card span {
     font-size: 13px;
     color: #777;
@@ -194,6 +241,20 @@
 
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  /* movil */
+
+  @media (max-width: 768px) {
+    .reviews-slider {
+      overflow-x: auto;
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+
+    .reviews-track {
+      animation: none;
     }
   }
 </style>
