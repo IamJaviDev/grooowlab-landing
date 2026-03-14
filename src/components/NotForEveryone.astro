@@ -91,23 +91,19 @@
   /* CARD */
 
   .not-card {
+    max-width: 320px;
     padding: clamp(30px, 3vw, 40px) clamp(22px, 2vw, 30px);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(120, 120, 120, 0.08);
 
     background: linear-gradient(
       180deg,
-      rgba(224, 255, 63, 0.18) 0%,
+      rgba(224, 255, 63, 0.06) 0%,
       rgba(224, 255, 63, 0.03) 40%,
       rgba(0, 0, 0, 0) 100%
     );
 
     transition: 0.25s;
-  }
-
-  .not-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(224, 255, 63, 0.4);
   }
 
   /* CARD TEXT */
