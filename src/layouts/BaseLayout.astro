@@ -1,7 +1,12 @@
 ---
 import "../styles/global.css";
 import CookieBanner from "../components/CookieBanner.astro";
-const { title = "Grooowlab" } = Astro.props;
+const {
+  title = "Grooowlab | Growth para eCommerce",
+  description = "Escalamos eCommerce a 7 cifras con sistemas de crecimiento reales.",
+  image = "/favicon-growlab.jpeg",
+  url = "https://grooowlab.com",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,11 +14,27 @@ const { title = "Grooowlab" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
 
+    <!-- META ETIQUETAS -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- OPEN GRAPH (REDES SOCIALES) (WhatsApp / LinkedIn) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={url} />
+
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/svg+xml" href="/favicon-growlab.jpeg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
@@ -22,8 +43,10 @@ const { title = "Grooowlab" } = Astro.props;
       href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap"
       rel="stylesheet"
     />
-  </head>
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="/favicon-growlab.jpeg" />
+  </head>
   <body>
     <slot />
     <CookieBanner />
