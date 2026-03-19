@@ -67,6 +67,42 @@ const canonical = new URL(Astro.url.pathname, "https://grooowlab.com").href;
 
     <!-- FAVICON -->
     <link rel="icon" type="image/jpeg" href="/favicon-growlab.jpeg" />
+
+    <!-- SCHEMA GLOBAL -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://grooowlab.com/#organization",
+            "name": "Grooowlab",
+            "url": "https://grooowlab.com",
+            "logo": "https://grooowlab.com/favicon-growlab.jpeg",
+            "description": "Agencia de growth especializada en escalar eCommerce a 7 cifras mediante CRO, adquisición y sistemas de crecimiento.",
+            "sameAs": [
+              //"https://www.linkedin.com/",
+              "https://www.instagram.com/grooowlab"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://grooowlab.com/#service",
+            "name": "Grooowlab",
+            "image": "https://grooowlab.com/og-image.jpg",
+            "url": "https://grooowlab.com",
+            "description": "Servicios de growth para eCommerce: CRO, adquisición de tráfico y sistemas de escalado.",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Spain"
+            },
+            "provider": {
+              "@id": "https://grooowlab.com/#organization"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
