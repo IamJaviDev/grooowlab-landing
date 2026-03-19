@@ -1,12 +1,15 @@
 ---
 import "../styles/global.css";
 import CookieBanner from "../components/CookieBanner.astro";
+
 const {
   title = "Grooowlab | Growth para eCommerce",
   description = "Escalamos eCommerce a 7 cifras con sistemas de crecimiento reales.",
-  image = "https://grooowlab.com/favicon-growlab.jpeg",
-  url = "https://grooowlab.com",
+  image = "https://grooowlab.com/og-image.jpg", // ⚠️ crear esta imagen (1200x630)
 } = Astro.props;
+
+// Canonical dinámico
+const canonical = Astro.url.href;
 ---
 
 <!doctype html>
@@ -15,42 +18,49 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- META ETIQUETAS -->
+    <!-- META -->
     <title>{title}</title>
     <meta name="description" content={description} />
 
-    <!-- OPEN GRAPH (REDES SOCIALES) (WhatsApp / LinkedIn) -->
+    <!-- CANONICAL -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- OPEN GRAPH -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-    <meta property="og:url" content={url} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Grooowlab - Growth para eCommerce" />
+    <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter -->
+    <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Canonical -->
-    <link rel="canonical" href={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link
-      rel="preload"
       href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap"
       rel="stylesheet"
     />
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="/favicon-growlab.jpeg" />
+    <link rel="icon" type="image/jpeg" href="/favicon-growlab.jpeg" />
   </head>
+
   <body>
-    <!-- AQUÍ SE RENDERIZAN LAS PÁGINAS -->
+    <!-- CONTENIDO -->
     <slot />
 
     <CookieBanner />
@@ -58,21 +68,20 @@ const {
 
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
-        // Detecta si es dispositivo táctil (móvil o tablet)
+        const cursor = document.querySelector(".cursor");
+
+        // Detecta si es dispositivo táctil
         const isTouchDevice =
           "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
         if (isTouchDevice) {
-          const cursor = document.querySelector(".cursor");
           if (cursor) cursor.style.display = "none";
           return;
         }
 
-        const cursor = document.querySelector(".cursor");
+        if (!cursor) return;
 
         document.addEventListener("mousemove", (e) => {
-          if (!cursor) return;
-
           cursor.style.left = e.clientX + "px";
           cursor.style.top = e.clientY + "px";
         });
