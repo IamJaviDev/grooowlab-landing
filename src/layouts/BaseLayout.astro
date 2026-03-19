@@ -4,7 +4,7 @@ import CookieBanner from "../components/CookieBanner.astro";
 const {
   title = "Grooowlab | Growth para eCommerce",
   description = "Escalamos eCommerce a 7 cifras con sistemas de crecimiento reales.",
-  image = "/favicon-growlab.jpeg",
+  image = "https://grooowlab.com/favicon-growlab.jpeg",
   url = "https://grooowlab.com",
 } = Astro.props;
 ---
@@ -36,10 +36,12 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link
+      rel="preload"
       href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap"
       rel="stylesheet"
     />
@@ -48,9 +50,12 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon-growlab.jpeg" />
   </head>
   <body>
+    <!-- AQUÍ SE RENDERIZAN LAS PÁGINAS -->
     <slot />
+
     <CookieBanner />
     <div class="cursor"></div>
+
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
         // Detecta si es dispositivo táctil (móvil o tablet)
