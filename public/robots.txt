@@ -17,4 +17,4 @@ Disallow: /*?ref=
 Disallow: /*?fbclid=
 
 # Sitemap
-Sitemap: https://grooowlab.com/sitemap.xml
+Sitemap: https://grooowlab.com/sitemap-index.xml
