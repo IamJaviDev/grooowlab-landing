@@ -6,10 +6,11 @@ const {
   title = "Grooowlab | Growth para eCommerce",
   description = "Escalamos eCommerce a 7 cifras con sistemas de crecimiento reales.",
   image = "https://grooowlab.com/og-image.jpg", // ⚠️ crear esta imagen (1200x630)
+  noindex = false,
 } = Astro.props;
 
-// Canonical dinámico
-const canonical = Astro.url.href;
+// CANONICAL DINÁMICO
+const canonical = new URL(Astro.url.pathname, "https://grooowlab.com").href;
 ---
 
 <!doctype html>
@@ -21,6 +22,15 @@ const canonical = Astro.url.href;
     <!-- META -->
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <!-- ROBOTS -->
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta name="robots" content="index, follow" />
+      )
+    }
 
     <!-- CANONICAL -->
     <link rel="canonical" href={canonical} />

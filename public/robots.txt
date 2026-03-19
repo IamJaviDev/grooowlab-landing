@@ -1,0 +1,20 @@
+# =========================================
+# ROBOTS.TXT — GROOOWLAB
+# Agencia de Growth para eCommerce
+# =========================================
+
+User-agent: *
+Allow: /
+
+# Bloqueo de rutas técnicas (seguridad + limpieza SEO)
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /cdn-cgi/
+
+# Bloqueo de parámetros comunes 
+Disallow: /*?utm_
+Disallow: /*?ref=
+Disallow: /*?fbclid=
+
+# Sitemap
+Sitemap: https://grooowlab.com/sitemap.xml
