@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
 import CookieBanner from "../components/CookieBanner.astro";
+import NavBar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
 
 const {
   title = "Grooowlab | Growth para eCommerce",
@@ -106,9 +109,10 @@ const canonical = new URL(Astro.url.pathname, "https://grooowlab.com").href;
   </head>
 
   <body>
+    <Navbar />
     <!-- CONTENIDO -->
     <slot />
-
+    <Footer />
     <CookieBanner />
     <div class="cursor"></div>
 
