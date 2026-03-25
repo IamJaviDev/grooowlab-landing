@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar.astro";
 const {
   title = "Grooowlab | Growth para eCommerce",
   description = "Escalamos eCommerce a 7 cifras con sistemas de crecimiento reales.",
-  image = "https://grooowlab.com/og-image.png", // ⚠️ crear esta imagen (1200x630)
+  image = "https://grooowlab.com/og-image.png",
   noindex = false,
 } = Astro.props;
 
@@ -21,6 +21,21 @@ const canonical = new URL(Astro.url.pathname, "https://grooowlab.com").href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- GOOGLE TAG MANAGER -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MJJQ59ZS");
+    </script>
+    <!-- END GOOGLE TAG MANAGER -->
 
     <!-- META -->
     <title>{title}</title>
@@ -83,10 +98,7 @@ const canonical = new URL(Astro.url.pathname, "https://grooowlab.com").href;
             "url": "https://grooowlab.com",
             "logo": "https://grooowlab.com/favicon-growlab.jpeg",
             "description": "Agencia de growth especializada en escalar eCommerce a 7 cifras mediante CRO, adquisición y sistemas de crecimiento.",
-            "sameAs": [
-              //"https://www.linkedin.com/",
-              "https://www.instagram.com/grooowlab"
-            ]
+            "sameAs": ["https://www.instagram.com/grooowlab"]
           },
           {
             "@type": "ProfessionalService",
@@ -109,9 +121,21 @@ const canonical = new URL(Astro.url.pathname, "https://grooowlab.com").href;
   </head>
 
   <body>
+    <!-- GOOGLE TAG MANAGER (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MJJQ59ZS"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- END GOOGLE TAG MANAGER (noscript) -->
+
     <Navbar />
+
     <!-- CONTENIDO -->
     <slot />
+
     <Footer />
     <CookieBanner />
     <div class="cursor"></div>
@@ -120,7 +144,6 @@ const canonical = new URL(Astro.url.pathname, "https://grooowlab.com").href;
       document.addEventListener("DOMContentLoaded", () => {
         const cursor = document.querySelector(".cursor");
 
-        // Detecta si es dispositivo táctil
         const isTouchDevice =
           "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
