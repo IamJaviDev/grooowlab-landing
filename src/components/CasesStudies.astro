@@ -15,24 +15,17 @@
 
       <div class="cases__track">
         <!-- CARD -->
-
         <div class="case">
           <div
             class="case__image"
             style="background-image:url('/anuncio1.png')"
           >
             <div class="case__overlay">
-              <h3>
-                +300% de crecimiento<br />
-                en menos de un año
-              </h3>
-
+              <h3>+300% de crecimiento<br />en menos de un año</h3>
               <p>
                 Una marca eCommerce escaló con estrategia creativa y
                 optimización del funnel.
               </p>
-
-              <a class="case__btn"> Descubre cómo lo hicimos → </a>
             </div>
           </div>
 
@@ -61,27 +54,18 @@
           </div>
         </div>
 
-        <!-- puedes duplicar cards luego -->
-
         <!-- CARD 2 -->
-
         <div class="case">
           <div
             class="case__image"
             style="background-image:url('/anuncio2.png')"
           >
             <div class="case__overlay">
-              <h3>
-                De 0 a 6 cifras<br />
-                en 5 meses
-              </h3>
-
+              <h3>De 0 a 6 cifras<br />en 5 meses</h3>
               <p>
                 Lanzamos desde cero una marca con foco en conversión,
                 creatividades y testing constante.
               </p>
-
-              <a class="case__btn"> Descubre cómo lo hicimos → </a>
             </div>
           </div>
 
@@ -111,24 +95,17 @@
         </div>
 
         <!-- CARD 3 -->
-
         <div class="case">
           <div
             class="case__image"
             style="background-image:url('/anuncio3.png')"
           >
             <div class="case__overlay">
-              <h3>
-                +180% en ventas<br />
-                optimizando el funnel
-              </h3>
-
+              <h3>+180% en ventas<br />optimizando el funnel</h3>
               <p>
                 No tocamos el producto. Solo mejoramos el sistema: CRO, oferta y
                 estructura de tráfico.
               </p>
-
-              <a class="case__btn"> Descubre cómo lo hicimos → </a>
             </div>
           </div>
 
@@ -166,16 +143,11 @@
     padding: clamp(70px, 8vw, 120px) 0;
   }
 
-  /* TAG */
-
   .cases__tag {
     color: var(--color-accent);
     text-align: center;
     margin-bottom: 10px;
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
   }
-
-  /* TITLE */
 
   .cases__title {
     text-align: center;
@@ -190,8 +162,6 @@
     position: relative;
   }
 
-  /* CONTROLS */
-
   .cases__controls {
     position: absolute;
     top: 20px;
@@ -199,27 +169,6 @@
     display: flex;
     gap: 10px;
     z-index: 20;
-  }
-
-  .cases__controls button {
-    background: #1a1a1a;
-    border: none;
-    color: var(--color-accent);
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: 0.2s;
-  }
-
-  .cases__controls button:hover {
-    background: #262626;
   }
 
   /* TRACK */
@@ -244,82 +193,59 @@
   /* IMAGE */
 
   .case__image {
-    background: #1a1a1a;
     position: relative;
     padding: clamp(30px, 5vw, 60px);
     display: flex;
     align-items: flex-end;
+    background-size: cover;
+    background-position: center;
   }
 
   .case__image::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.95),
-      rgba(0, 0, 0, 0.75)
-    );
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
   }
 
   .case__overlay {
-    positon: relative;
+    position: relative;
     z-index: 2;
   }
 
-  /* CARD TITLE */
-
   .case__overlay h3 {
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
-
-  /* TEXT */
 
   .case__overlay p {
     opacity: 0.8;
-    margin-bottom: 20px;
-    font-size: clamp(0.95rem, 1vw, 1.05rem);
-  }
-
-  /* BUTTON */
-
-  .case__btn {
-    display: inline-block;
-    padding: 12px 20px;
-    border: 1px solid #fff;
-    border-radius: 8px;
   }
 
   /* STATS */
 
   .case__stats {
     background: #1f1f1f;
-    padding: clamp(30px, 3vw, 40px);
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-  }
-
-  .case__stats h4 {
-    opacity: 0.6;
-    margin-bottom: 10px;
+    gap: 16px;
   }
 
   .stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 12px;
   }
 
   .stat strong {
     color: var(--color-accent);
-    display: block;
-    font-size: 1.4rem;
+    line-height: 1;
   }
 
   .stat span {
     opacity: 0.7;
-    font-size: 0.9rem;
   }
 
   /* TABLET */
@@ -329,14 +255,24 @@
       grid-template-columns: 1fr;
     }
 
+    .case__image {
+      height: 260px;
+      padding: 24px;
+    }
+
     .case__stats {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      align-items: stretch;
     }
 
     .stat {
-      width: 45%;
+      height: 100%;
+      min-height: 80px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
       border: none;
     }
   }
@@ -344,25 +280,19 @@
   /* MOBILE */
 
   @media (max-width: 600px) {
-    .case__overlay h3 {
-      font-size: 1.6rem;
-    }
-
     .case__stats {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
 
     .stat {
-      width: 100%;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .cases__controls {
-      top: 15px;
-      right: 15px;
+      border-radius: 0;
+      background: none;
+      padding: 12px 0;
     }
   }
 </style>
+
 <script is:inline>
   const track = document.querySelector(".cases__track");
   const prev = document.querySelector(".prev");
