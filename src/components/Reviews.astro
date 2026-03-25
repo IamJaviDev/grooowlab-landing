@@ -3,7 +3,8 @@
 
   <div class="reviews-header">
     <h2>
-      Podríamos escribir aquí lo increíbles que somos.<br /> Pero para eso están ellos.
+      Podríamos escribir aquí lo increíbles que somos.<br />
+      Pero para eso están ellos.
     </h2>
 
     <p>Clientes reales. Resultados reales. Sin guión ensayado.</p>
@@ -15,91 +16,94 @@
 
   <div class="reviews-slider">
     <div class="reviews-track">
-      <!-- Review 1 -->
-      <div class="review-card">
-        <h3>Claudia&Julia</h3>
-        <div class="stars">★★★★★</div>
-
-        <p>
-          "Pensaba que ya había visto de todo en agencias. Me equivocaba. Estos
-          trabajan como si el negocio fuera suyo. Y se nota en cada decisión."
-        </p>
-
-        <hr class="review-divider" />
-
-        <span>Claudia · Fundadora</span>
-      </div>
-
-      <!-- Review 2 -->
-      <div class="review-card">
-        <h3>8hours</h3>
-        <div class="stars">★★★★★</div>
-
-        <p>
-          "Primera vez en años que una agencia me habla de estrategia sin que yo
-          tenga que pedirlo. Claridad total y un sistema que por fin escala."
-        </p>
-
-        <hr class="review-divider" />
-
-        <span>Mathias · Founder</span>
-      </div>
-
-      <!-- Review 3 -->
-      <div class="review-card">
-        <h3>Cocoa</h3>
-        <div class="stars">★★★★★</div>
-
-        <p>
-          "Llegamos sin brújula y con presupuesto quemado. Ahora tenemos
-          dirección, sistema y los números para demostrarlo. Ojalá los
-          hubiéramos encontrado antes."
-        </p>
-
-        <hr class="review-divider" />
-
-        <span>Rubén · CEO</span>
-      </div>
-
-      <!-- Review 4 -->
-      <div class="review-card">
-        <h3>Materia Rica</h3>
-        <div class="stars">★★★★★</div>
-
-        <p>
-          "En pocos meses vimos más resultados que en años trabajando con otras
-          agencias."
-        </p>
-
-        <hr class="review-divider" />
-
-        <span>Andrea · Founder</span>
-      </div>
-
-      <!-- duplicadas para loop infinito -->
+      <!-- BLOQUE ORIGINAL -->
 
       <div class="review-card">
-        <h3>Claudia&Julia</h3>
+        <h3>UrbanFit Store</h3>
         <div class="stars">★★★★★</div>
-
         <p>
-          "No son una agencia más. Trabajan como si fueran parte del equipo."
+          "Pasamos de ir a ciegas a tener un sistema claro. Cada euro invertido
+          ahora tiene sentido."
         </p>
-
         <hr class="review-divider" />
-
-        <span>Claudia · Fundadora</span>
+        <span>Javier · Founder</span>
       </div>
 
       <div class="review-card">
-        <h3>8hours</h3>
+        <h3>Lumina Beauty</h3>
         <div class="stars">★★★★★</div>
-
-        <p>"Nos dieron claridad estratégica y estructura."</p>
-
+        <p>
+          "Nos hicieron entender por qué antes no funcionaba. Ahora todo tiene
+          lógica."
+        </p>
         <hr class="review-divider" />
+        <span>Laura · CEO</span>
+      </div>
 
-        <span>Mathias · Founder</span>
+      <div class="review-card">
+        <h3>Nordic Home</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "Pasamos de quemar presupuesto a tener previsibilidad real en ventas."
+        </p>
+        <hr class="review-divider" />
+        <span>Andrés · eCommerce Manager</span>
+      </div>
+
+      <div class="review-card">
+        <h3>Fuel Nutrition</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "En meses entendimos más del negocio que en años. Sistema real, no
+          humo."
+        </p>
+        <hr class="review-divider" />
+        <span>Marcos · Co-founder</span>
+      </div>
+
+      <!-- DUPLICADO PARA LOOP (SOLO 1 VEZ) -->
+
+      <div class="review-card">
+        <h3>UrbanFit Store</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "Pasamos de ir a ciegas a tener un sistema claro. Cada euro invertido
+          ahora tiene sentido."
+        </p>
+        <hr class="review-divider" />
+        <span>Javier · Founder</span>
+      </div>
+
+      <div class="review-card">
+        <h3>Lumina Beauty</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "Nos hicieron entender por qué antes no funcionaba. Ahora todo tiene
+          lógica."
+        </p>
+        <hr class="review-divider" />
+        <span>Laura · CEO</span>
+      </div>
+
+      <div class="review-card">
+        <h3>Nordic Home</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "Pasamos de quemar presupuesto a tener previsibilidad real en ventas."
+        </p>
+        <hr class="review-divider" />
+        <span>Andrés · eCommerce Manager</span>
+      </div>
+
+      <div class="review-card">
+        <h3>Fuel Nutrition</h3>
+        <div class="stars">★★★★★</div>
+        <p>
+          "En meses entendimos más del negocio que en años. Sistema real, no
+          humo."
+        </p>
+        <hr class="review-divider" />
+        <span>Marcos · Co-founder</span>
       </div>
     </div>
   </div>
@@ -113,8 +117,6 @@
     margin: auto;
   }
 
-  /* linea superior */
-
   .section-line {
     height: 1px;
     background: linear-gradient(90deg, transparent, #e0ff3f, transparent);
@@ -122,17 +124,13 @@
     margin-bottom: 80px;
   }
 
-  /* header */
-
   .reviews-header h2 {
     font-size: clamp(2rem, 4vw, 3.5rem);
-    margin-top: 0;
     margin-bottom: clamp(30px, 5vw, 50px);
   }
 
   .reviews-header p {
     color: #aaa;
-    margin: auto;
     margin-bottom: 30px;
   }
 
@@ -146,8 +144,6 @@
     box-shadow: 0 0 25px #e0ff3f55;
   }
 
-  /* slider */
-
   .reviews-slider {
     margin-top: 70px;
     overflow: hidden;
@@ -160,29 +156,17 @@
       black calc(100% - 120px),
       transparent
     );
-
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 120px,
-      black calc(100% - 120px),
-      transparent
-    );
   }
 
   .reviews-track {
     display: flex;
     gap: 60px;
-    animation: scrollReviews 9s linear infinite;
+    animation: scrollReviews 25s linear infinite;
   }
-
-  /* pausa en hover */
 
   .reviews-track:hover {
     animation-play-state: paused;
   }
-
-  /* cards */
 
   .review-card {
     min-width: 350px;
@@ -191,7 +175,6 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: #0a0a0a;
     text-align: left;
-    transition: 0.3s;
   }
 
   .review-card h3 {
@@ -200,7 +183,6 @@
   }
 
   .stars {
-    color: #fff;
     margin-bottom: 15px;
   }
 
@@ -210,8 +192,6 @@
     line-height: 1.6;
     margin-bottom: 20px;
   }
-
-  /* linea dentro review */
 
   .review-divider {
     border: none;
@@ -230,31 +210,23 @@
     color: #777;
   }
 
-  /* animacion */
-
   @keyframes scrollReviews {
     0% {
       transform: translateX(0);
     }
-
     100% {
       transform: translateX(-50%);
     }
   }
 
-  /* movil */
-
   @media (max-width: 768px) {
     .reviews-slider {
       overflow-x: auto;
       mask-image: none;
-      -webkit-mask-image: none;
-
-      -webkit-overflow-scrolling: touch;
     }
 
     .reviews-track {
-      animation: scrollReviews 9s linear infinite;
+      animation: none;
     }
   }
 </style>
